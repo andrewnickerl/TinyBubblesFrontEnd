@@ -67,7 +67,15 @@ function makeTable() {
     // put post request here
     let icon = document.createElement("i");
     icon.setAttribute("class", "far fa-star");
-    icon.addEventListener("click", addToFavorites);
+    icon.addEventListener("click", () => {
+      axios.get()
+      axios.post(`https://tiny-bubbles.herokuapp.com/addFavorite/${}`, {
+        name: results[i].name,
+        address: `${results[i].street}, ${results[i].city}, ${results[i].state}, ${results[i].postal_code}`,
+        phone: results[i].phone,
+        link: results[i].website_url,
+      });
+    });
     favAnchor.appendChild(icon);
     favorites.appendChild(favAnchor);
     newRow.appendChild(favorites);
@@ -78,9 +86,8 @@ function makeTable() {
 useBreweryResponse = () =>
   console.log("Check out these breweries: " + JSON.stringify(results));
 
-function addToFavorites() {
+function addToFavorites(event) {
   // do something
-  axios.post();
 }
 
 function resetValues() {
