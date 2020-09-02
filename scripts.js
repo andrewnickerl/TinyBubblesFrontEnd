@@ -1,5 +1,6 @@
 let searchResultsDiv = document.getElementById("search_results");
 let searchButton = document.getElementById("search_button");
+let registerbutton = document.getElementById("register_btn");
 let table = document.getElementById("results_table");
 let results = [];
 
@@ -16,6 +17,21 @@ searchButton.addEventListener("click", (event) => {
     makeTable();
     resetValues();
   });
+});
+
+registerbutton.addEventListener("click", (event) => {
+  event.preventDefault();
+  let username = document.getElementById("userName");
+  let password = document.getElementById("password");
+  let firstName = document.getElementById("fName");
+  let lastName = document.getElementById("lName");
+  axios.post("https://tiny-bubbles.herokuapp.com/newUser", {
+    userName: username,
+    password: password,
+    fName: firstName,
+    lName: lastName,
+  });
+  window.location = "/loggedIn.html";
 });
 
 function makeTable() {
@@ -68,8 +84,7 @@ function makeTable() {
     let icon = document.createElement("i");
     icon.setAttribute("class", "far fa-star");
     icon.addEventListener("click", () => {
-      axios.get()
-      axios.post(`https://tiny-bubbles.herokuapp.com/addFavorite/${}`, {
+      axios.post("https://tiny-bubbles.herokuapp.com/addFavorite", {
         name: results[i].name,
         address: `${results[i].street}, ${results[i].city}, ${results[i].state}, ${results[i].postal_code}`,
         phone: results[i].phone,
