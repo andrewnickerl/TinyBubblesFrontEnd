@@ -1,0 +1,81 @@
+nav {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  background-color: white;
+}
+
+.jumbotron {
+  font-family: "Montserrat", sans-serif;
+  background-color: white;
+  text-align: center;
+}
+
+#fixed-img-heading {
+  position: absolute;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  width: 100%;
+
+  /* background-color: rgba(0, 0, 0, 0.3); */
+  /* color: white;
+  text-shadow: 1px 1px #adacac; */
+}
+#nested-carousel-h1 {
+  display: flex;
+  align-items: center;
+}
+
+#carouselExampleControls {
+  z-index: 1;
+}
+
+.button-styled {
+  background-color: #2c3d5e;
+  border-color: #2c3d5e;
+  border-radius: 25px 25px 25px 25px;
+}
+.button-styled:hover {
+  background-color: rgba(216, 106, 5, 0.4);
+  color: #2c3d5e;
+  border: 2px solid #2c3d5e;
+}
+
+.row {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#review-paragraph {
+  font-weight: 700;
+  font-size: 25px;
+  padding-left: 10px;
+  /* background-color: rgba(0, 0, 0, 0.2); */
+}
+#review-paragraph-div {
+  display: flex;
+  border: 5px solid rgba(216, 106, 5, 0.2);
+  border-radius: 5px;
+}
+@media (max-width: 480px) {
+  #review-paragraph-div {
+    margin-bottom: 15px;
+  }
+}
+
+/* align-items: center; */
+
+footer {
+  background-color: #2c3d5e;
+  margin-top: 15px;
+  width: 100%;
+}
+#footer-h6 {
+  color: white;
+  text-align: center;
+  padding: 15px 15px 15px 15px;
+}
+
+#search_body {
+  width: auto;
+}
