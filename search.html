@@ -23,6 +23,76 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="modal" id="signOutModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Sign Out</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Are you sure you want to sign out?</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              No
+            </button>
+            <button
+              id="signOutBtn"
+              onclick="window.location='/index.html'"
+              type="button"
+              class="btn btn-primary"
+            >
+              Yes, Sign Out
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <a class="navbar-brand" href="/loggedin.html"
+        ><i class="fas fa-beer"></i
+      ></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="/loggedin.html"
+            >HOME <span class="sr-only">(current)</span></a
+          >
+          <a class="nav-link" href="/profile.html">PROFILE</a>
+          <a class="nav-link active" href="#">SEARCH</a>
+          <a
+            class="nav-link"
+            href="#"
+            data-toggle="modal"
+            href="#"
+            data-target="#signOutModal"
+            >SIGN OUT</a
+          >
+        </div>
+      </div>
+    </nav>
     <form>
       <h1>Search breweries near you</h1>
       <div class="form-group">
