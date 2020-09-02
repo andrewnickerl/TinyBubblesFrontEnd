@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home | Tiny Bubbles</title>
+    <title>Logged In | Tiny Bubbles</title>
 
     <link
       rel="stylesheet"
@@ -83,7 +83,7 @@
       </div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-      <a class="navbar-brand" href="/frontend/index.html"
+      <a class="navbar-brand" href="/frontend/loggedin.html"
         ><i class="fas fa-beer"></i
       ></a>
       <button
@@ -99,18 +99,12 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" href="/frontend/index.html"
+          <a class="nav-link active" href="/frontend/loggedin.html"
             >HOME <span class="sr-only">(current)</span></a
           >
-          <a
-            class="nav-link active"
-            data-toggle="modal"
-            href="#"
-            data-target="#loginModal"
-            >LOGIN</a
-          >
-          <a class="nav-link active" href="/frontend/register.html">SIGN UP</a>
+          <a class="nav-link" href="#">PROFILE</a>
           <a class="nav-link" href="/frontend/search.html">SEARCH</a>
+          <a class="nav-link" href="#">SIGN OUT</a>
         </div>
       </div>
     </nav>
@@ -162,19 +156,20 @@
       </div>
     </div>
     <div class="jumbotron">
-      <h1 class="display-4">Welcome to Tiny Bubbles!</h1>
+      <h1 class="display-4">Welcome USERNAME HERE</h1>
+      <!--IMPORTANT: Insert current username above-->
       <p class="lead">
-        A blog where you can view craft breweries near you, save them to
-        wishlists, and add them to favorites.
+        View craft breweries near you, save them to your wishlists, and add them
+        to your favorites.
       </p>
       <hr class="my-4" />
-      <p>Click the button below to create an account and view breweries!</p>
+      <p>Click the button below to view your profile page!</p>
       <div class="center-button-p">
         <a
           class="btn btn-primary btn-lg button-styled"
           href="/frontend/register.html"
           role="button"
-          >Sign up</a
+          >My Profile</a
         >
       </div>
     </div>
