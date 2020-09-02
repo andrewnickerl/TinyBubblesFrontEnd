@@ -56,7 +56,11 @@ function makeTable() {
     phone.innerHTML = results[i].phone;
     newRow.appendChild(phone);
     let url = document.createElement("td");
-    url.innerHTML = results[i].website_url;
+    // url.innerHTML = results[i].website_url;
+    let link = document.createElement("a");
+    link.setAttribute("href", results[i].website_url);
+    link.innerHTML = "Click here";
+    url.appendChild(link);
     newRow.appendChild(url);
     let favorites = document.createElement("td");
     let favAnchor = document.createElement("a");
