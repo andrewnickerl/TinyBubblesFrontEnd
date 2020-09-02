@@ -24,66 +24,8 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div
-      class="modal fade"
-      id="loginModal"
-      tabindex="-1"
-      aria-labelledby="loginModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="loginModalLabel">
-              Login to your Tiny Bubbles Account
-            </h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form id="login_form">
-              <div class="form-group">
-                <label for="userNameLogin">Username</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="userNameLogin"
-                  aria-describedby="username help"
-                />
-              </div>
-              <div class="form-group">
-                <label for="passwordLogin">Password</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="passwordLogin"
-                  aria-describedby=""
-                />
-              </div>
-            </form>
-            <button type="button" class="btn btn-primary">Login</button>
-          </div>
-          <div class="modal-footer">
-            <a>Don't have an account yet? Sign up here:</a>
-            <a
-              class="btn btn-secondary"
-              href="/frontend/register.html"
-              role="button"
-            >
-              Register
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-      <a class="navbar-brand" href="/frontend/loggedin.html"
+      <a class="navbar-brand" href="/loggedin.html"
         ><i class="fas fa-beer"></i
       ></a>
       <button
@@ -99,11 +41,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" href="/frontend/loggedin.html"
+          <a class="nav-link active" href="/loggedin.html"
             >HOME <span class="sr-only">(current)</span></a
           >
           <a class="nav-link" href="#">PROFILE</a>
-          <a class="nav-link" href="/frontend/search.html">SEARCH</a>
+          <a class="nav-link" href="/search.html">SEARCH</a>
           <a class="nav-link" href="#">SIGN OUT</a>
         </div>
       </div>
@@ -165,10 +107,7 @@
       <hr class="my-4" />
       <p>Click the button below to view your profile page!</p>
       <div class="center-button-p">
-        <a
-          class="btn btn-primary btn-lg button-styled"
-          href="/frontend/register.html"
-          role="button"
+        <a class="btn btn-primary btn-lg button-styled" href="#" role="button"
           >My Profile</a
         >
       </div>
