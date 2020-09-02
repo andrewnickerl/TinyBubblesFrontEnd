@@ -96,28 +96,31 @@
     </nav>
     <div id="profile_page" class="container-fluid">
       <div class="row">
-        <div class="card" style="width: 18rem">
-          <img
-            src="https://images.unsplash.com/photo-1560761069-ce1ebcc652a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-            class="card-img-top"
-            alt="profile picture"
-          />
-          <div class="card-body">
-            <h5 class="card-title">USERNAME HERE</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
-          <li class="list-group-item">fName and lName HERE</li>
-          <li class="list-group-item">
-            <div class="row">
-              <p>Change Password?</p>
-              <button type="button" class="btn-"
+        <div class="col-3-9">
+          <div class="card" style="width: 18rem">
+            <img
+              src="https://images.unsplash.com/photo-1560761069-ce1ebcc652a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+              class="card-img-top"
+              alt="profile picture"
+            />
+            <div class="card-body">
+              <h5 class="card-title">USERNAME HERE</h5>
+              <p class="card-text">
+                Avid beer drinker and burgeoning connoisseur of fine craft brews
+              </p>
             </div>
-          </li>
+            <li class="list-group-item">fName and lName HERE</li>
+            <li class="list-group-item">
+              <div class="row">
+                <button type="button" class="btn btn-danger">
+                  Password Reset
+                </button>
+              </div>
+            </li>
+          </div>
         </div>
-        <div id="wishlist">
+        <div id="wishlist" class="col-6-9">
+          <h4>Your Favorite Breweries</h4>
           <table id="wishlist_table"></table>
         </div>
       </div>
