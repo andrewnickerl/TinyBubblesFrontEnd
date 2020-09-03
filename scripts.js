@@ -3,8 +3,15 @@ let searchButton = document.getElementById("search_button");
 let registerButton = document.getElementById("register_btn");
 let table = document.getElementById("results_table");
 let results = [];
-let user = axios.get("https://tiny-bubbles.herokuapp.com/user");
-let favoritesListIsNull = user.favoritesList.length < 1;
+
+axios.get("https://tiny-bubbles.herokuapp.com/user").then((user) => {
+  let favoritesListIsNull = user.favoritesList.length < 1;
+  if (!favoritesListIsNull) {
+    if (window.location.href.match("profile.html") != null) {
+      makeFavoritesTable(user.favoritesList);
+    }
+  }
+});
 
 if (searchButton !== null) {
   searchButton.addEventListener("click", (event) => {
@@ -34,12 +41,6 @@ if (registerButton !== null) {
     });
     window.location = "/loggedIn.html";
   });
-}
-
-if (!favoritesListIsNull) {
-  if (window.location.href.match("profile.html") != null) {
-    makeFavoritesTable(user.favoritesList);
-  }
 }
 
 function makeSearchTable() {
