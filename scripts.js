@@ -47,13 +47,13 @@ if (loginButton !== null) {
 if (registerButton !== null) {
   registerButton.addEventListener("click", (event) => {
     event.preventDefault();
-    let username = document.getElementById("userName").value;
+    let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
     let firstName = document.getElementById("fName").value;
     let lastName = document.getElementById("lName").value;
     axios
       .post("https://tiny-bubbles.herokuapp.com/newUser", {
-        userName: username,
+        username: username,
         password: password,
         fName: firstName,
         lName: lastName,
