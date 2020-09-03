@@ -87,3 +87,7 @@ footer {
 .fa-star:hover {
   color: rgba(216, 106, 5, 0.4);
 }
+
+#form_div {
+  margin-top: 200px;
+}
