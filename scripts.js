@@ -51,12 +51,16 @@ if (registerButton !== null) {
     let password = document.getElementById("password").value;
     let firstName = document.getElementById("fName").value;
     let lastName = document.getElementById("lName").value;
-    axios.post("https://tiny-bubbles.herokuapp.com/newUser", {
-      userName: username,
-      password: password,
-      fName: firstName,
-      lName: lastName,
-    });
+    axios
+      .post("https://tiny-bubbles.herokuapp.com/newUser", {
+        userName: username,
+        password: password,
+        fName: firstName,
+        lName: lastName,
+      })
+      .then(() => {
+        window.location.href = "/TinyBubblesFrontEnd/index.html";
+      });
   });
 }
 
