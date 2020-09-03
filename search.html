@@ -95,27 +95,28 @@
         </div>
       </div>
     </nav>
-    <form>
-      <h1>Search breweries near you</h1>
-      <div class="form-group">
-        <label for="enter_zip">Enter zip code</label>
-        <input
-          type="text"
-          class="form-control"
-          id="enter_zip"
-          placeholder="five digit zip: 00000"
-          required
-        />
-      </div>
-      <button
-        type="submit"
-        class="btn btn-primary button-styled"
-        id="search_button"
-      >
-        Search
-      </button>
-    </form>
-
+    <div id="form_div">
+      <form>
+        <h1>Search breweries near you</h1>
+        <div class="form-group">
+          <label for="enter_zip">Enter zip code</label>
+          <input
+            type="text"
+            class="form-control"
+            id="enter_zip"
+            placeholder="five digit zip: 00000"
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          class="btn btn-primary button-styled"
+          id="search_button"
+        >
+          Search
+        </button>
+      </form>
+    </div>
     <div id="search_results">
       <table id="results_table"></table>
     </div>
