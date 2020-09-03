@@ -31,11 +31,15 @@ if (loginButton !== null) {
         axios
           .get(`https://tiny-bubbles.herokuapp.com/user/${username}`)
           .then((user) => {
-            window.location.href = "/TinyBubblesFrontEnd/logginIn.html";
-            let isFavoritesListNull = user.favoritesList.length < 1;
+            window.location.href = "/TinyBubblesFrontEnd/loggednIn.html";
+            let isFavoritesListNull = user.favoritesList.length > 0;
 
-            if (!isFavoritesListNull) {
-              if (window.location.href.match("profile.html") != null) {
+            if (isFavoritesListNull) {
+              if (
+                window.location.href.match(
+                  "/TinyBubblesFrontEnd/profile.html"
+                ) != null
+              ) {
                 makeFavoritesTable(user.favoritesList);
               }
             }
