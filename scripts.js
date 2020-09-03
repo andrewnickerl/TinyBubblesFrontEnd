@@ -1,17 +1,9 @@
 let searchResultsDiv = document.getElementById("search_results");
 let searchButton = document.getElementById("search_button");
 let registerButton = document.getElementById("register_btn");
+let loginButton = document.getElementById("loginBtn");
 let table = document.getElementById("results_table");
 let results = [];
-
-axios.get("https://tiny-bubbles.herokuapp.com/user").then((user) => {
-  let favoritesListIsNull = user.favoritesList.length < 1;
-  if (!favoritesListIsNull) {
-    if (window.location.href.match("profile.html") != null) {
-      makeFavoritesTable(user.favoritesList);
-    }
-  }
-});
 
 if (searchButton !== null) {
   searchButton.addEventListener("click", (event) => {
@@ -26,6 +18,32 @@ if (searchButton !== null) {
   });
 }
 
+if (loginButton !== null) {
+  loginButton.addEventListener("click", (req, res) => {
+    let username = document.getElementById("userNameLogin").value;
+    let password = document.getElementById("passwordLogin").value;
+    axios
+      .post("https://tiny-bubbles.herokuapp.com/login", {
+        username: username,
+        password: password,
+      })
+      .then((response) => {
+        axios
+          .get("https://tiny-bubbles.herokuapp.com/user", { id: response })
+          .then((user) => {
+            window.location.href = "/TinyBubblesFrontEnd/logginIn.html";
+            let isFavoritesListNull = user.favoritesList.length < 1;
+
+            if (!isFavoritesListNull) {
+              if (window.location.href.match("profile.html") != null) {
+                makeFavoritesTable(user.favoritesList);
+              }
+            }
+          });
+      });
+  });
+}
+
 if (registerButton !== null) {
   registerButton.addEventListener("click", (event) => {
     event.preventDefault();
@@ -33,17 +51,17 @@ if (registerButton !== null) {
     let password = document.getElementById("password").value;
     let firstName = document.getElementById("fName").value;
     let lastName = document.getElementById("lName").value;
-    axios
-      .post("https://tiny-bubbles.herokuapp.com/newUser", {
-        userName: username,
-        password: password,
-        fName: firstName,
-        lName: lastName,
-      })
-      .then(() => {
-        window.location = "/loggedIn.html";
-      });
+    axios.post("https://tiny-bubbles.herokuapp.com/newUser", {
+      userName: username,
+      password: password,
+      fName: firstName,
+      lName: lastName,
+    });
   });
+}
+
+function getUserId(id) {
+  return id;
 }
 
 function makeSearchTable() {
