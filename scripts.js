@@ -4,35 +4,39 @@ let registerbutton = document.getElementById("register_btn");
 let table = document.getElementById("results_table");
 let results = [];
 
-searchButton.addEventListener("click", (event) => {
-  event.preventDefault();
-  let zipCode = document.getElementById("enter_zip").value;
-  let url = "https://api.openbrewerydb.org/breweries/search?query=" + zipCode;
-  axios.get(url).then((response) => {
-    results = response.data;
-    useBreweryResponse();
-    console.log(results[0].name);
-    console.log(results[1].name);
+if (searchButton !== null) {
+  searchButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    let zipCode = document.getElementById("enter_zip").value;
+    let url = "https://api.openbrewerydb.org/breweries/search?query=" + zipCode;
+    axios.get(url).then((response) => {
+      results = response.data;
+      useBreweryResponse();
+      console.log(results[0].name);
+      console.log(results[1].name);
 
-    makeTable();
-    resetValues();
+      makeTable();
+      resetValues();
+    });
   });
-});
+}
 
-registerbutton.addEventListener("click", (event) => {
-  event.preventDefault();
-  let username = document.getElementById("userName");
-  let password = document.getElementById("password");
-  let firstName = document.getElementById("fName");
-  let lastName = document.getElementById("lName");
-  axios.post("https://tiny-bubbles.herokuapp.com/newUser", {
-    userName: username,
-    password: password,
-    fName: firstName,
-    lName: lastName,
+if (registerbutton !== null) {
+  registerbutton.addEventListener("click", (event) => {
+    event.preventDefault();
+    let username = document.getElementById("userName");
+    let password = document.getElementById("password");
+    let firstName = document.getElementById("fName");
+    let lastName = document.getElementById("lName");
+    axios.post("https://tiny-bubbles.herokuapp.com/newUser", {
+      userName: username,
+      password: password,
+      fName: firstName,
+      lName: lastName,
+    });
+    window.location = "/loggedIn.html";
   });
-  window.location = "/loggedIn.html";
-});
+}
 
 function makeTable() {
   table.setAttribute("class", "table table-bordered");
