@@ -29,8 +29,7 @@ if (loginButton !== null) {
       })
       .then((response) => {
         axios
-          .get("https://tiny-bubbles.herokuapp.com/user", {
-            username: username,
+          .get(`https://tiny-bubbles.herokuapp.com/user/${username}`
           })
           .then((user) => {
             window.location.href = "/TinyBubblesFrontEnd/logginIn.html";
