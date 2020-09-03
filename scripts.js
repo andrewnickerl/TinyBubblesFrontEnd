@@ -31,7 +31,7 @@ if (loginButton !== null) {
         axios
           .get(`https://tiny-bubbles.herokuapp.com/user/${username}`)
           .then((user) => {
-            window.location.href = "/TinyBubblesFrontEnd/loggednIn.html";
+            window.location.href = "/TinyBubblesFrontEnd/profile.html";
             let isFavoritesListNull = user.favoritesList.length > 0;
 
             if (isFavoritesListNull) {
