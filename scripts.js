@@ -32,17 +32,11 @@ if (loginButton !== null) {
           .get(`https://tiny-bubbles.herokuapp.com/user/${username}`)
           .then((user) => {
             window.location.href = "/TinyBubblesFrontEnd/profile.html";
-            let isFavoritesListNull = user.favoritesList.length > 0;
-
-            if (isFavoritesListNull) {
-              if (
-                window.location.href.match(
-                  "/TinyBubblesFrontEnd/profile.html"
-                ) != null
-              ) {
-                makeFavoritesTable(user.favoritesList);
-              }
-            }
+            makeFavoritesTable(user.favoritesList);
+            document.getElementById("username_here").innerHTML = username;
+            document.getElementById(
+              "firstName_lastName"
+            ).innerHTML = `${user.fName} ${user.lName}`;
           });
       });
   });
