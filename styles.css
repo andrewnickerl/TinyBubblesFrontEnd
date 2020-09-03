@@ -79,3 +79,11 @@ footer {
 #search_body {
   width: auto;
 }
+
+.fa-star {
+  color: #2c3d5e;
+}
+
+.fa-star:hover {
+  color: rgba(216, 106, 5, 0.4);
+}
